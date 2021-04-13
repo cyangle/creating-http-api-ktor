@@ -6,10 +6,30 @@ import io.ktor.http.*
 import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
+import com.fasterxml.jackson.annotation.JsonProperty
+import com.fasterxml.jackson.core.JsonProcessingException
+import com.papsign.ktor.openapigen.annotations.Request
+import com.papsign.ktor.openapigen.annotations.Response
+import com.papsign.ktor.openapigen.annotations.parameters.HeaderParam
+import com.papsign.ktor.openapigen.route.info
+import com.papsign.ktor.openapigen.route.path.normal.NormalOpenAPIRoute
+import com.papsign.ktor.openapigen.route.path.normal.get
+import com.papsign.ktor.openapigen.route.path.normal.post
+import com.papsign.ktor.openapigen.route.response.respond
+import com.papsign.ktor.openapigen.route.route
+import com.papsign.ktor.openapigen.route.throws
 
 fun Application.registerCustomerRoutes() {
     routing {
         customerRouting()
+    }
+}
+
+fun NormalOpenAPIRoute.testRouting() {
+    route("test") {
+        get {
+
+        }
     }
 }
 
